@@ -1,0 +1,5 @@
+<p>Bu qeydiyyat formasını JavaScript və Bootstrapdan istifadə edərək hazırlamışam. Aşağıdakı link vasitəsilə qeydiyyat formasına keçid edə bilərsiniz</p>
+<a href="https://pashaskerov21.github.io/Form/version1/index.html">Form</a>
+<p>Bu qeydiyyat formasında istifadəçi xanaları doldurduqdan və bir-bir mərhələləri keçdikdən sonra bir hesab yaratmalıdı və bu hesaba istifadəçi adı və şifrə təyin etməlidi. Hesab yaratdıqdan sonra bütün məlumatları yadda saxlayıb login səhifəsinə keçid etməlidir. Login səhifəsində təyin etdiyi istifadəçi adı və şifrəni daxil etdikdən sonra qeydiyyat formasında daxil etdiyi məlumatların göründüyü bir pəncərə açılacaq. Yuxarıdakı linkdəki qeydiyyat formasında istifadəçi məlumatları ayrı bir pəncərə olaraq açılır. Bu <a href="https://pashaskerov21.github.io/Form/version2/index.html">Form Version 2</a> qeydiyyat formasında isə sonda istifadəçi məlumatları modal pəncərədə görünür</p>
+<p>Qeyd: Bu qeydiyyat formasında istifadəçinin daxil etdiyi məlumatlar heç bir SQL serverinə ötürülmür. Məlumatlar səhifədə dövr edir və səhifə yeniləndikdə daxil edilən məlumatlar silinir.</p>
+
