@@ -527,9 +527,27 @@ let showLoginPasswordIcon = document.getElementById("show-login-password-icon");
 let loginModalSubmitBtn = document.getElementById("login-modal-submit-btn");
 let openUserDataModalBtn = document.getElementById("open-user-data-modal-btn");
 
+let wrongLoginUsernameToast = document.getElementById(
+  "wrong-login-username-alert-toast"
+);
+let wrongLoginPasswordToast = document.getElementById(
+  "wrong-login-password-alert-toast"
+);
+let wrongLoginUPToast = document.getElementById(
+  "wrong-login-username-password-alert-toast"
+);
+
 userInformationOpenBtn.onclick = function () {
   loginUsernameInput.value = "";
   loginPasswordInput.value = "";
+  document.querySelector("#education-table tbody").innerHTML = "";
+  document.querySelector("#language-table tbody").innerHTML = "";
+  document.querySelector("#computer-table tbody").innerHTML = "";
+
+  wrongLoginUsernameToast.classList.remove("show");
+  wrongLoginPasswordToast.classList.remove("show");
+  wrongLoginUPToast.classList.remove("show");
+
   openUserDataModalBtn.setAttribute("disabled", "");
 };
 
@@ -542,15 +560,7 @@ showLoginPasswordIcon.onclick = function (e) {
   }
 };
 
-let wrongLoginUsernameToast = document.getElementById(
-  "wrong-login-username-alert-toast"
-);
-let wrongLoginPasswordToast = document.getElementById(
-  "wrong-login-password-alert-toast"
-);
-let wrongLoginUPToast = document.getElementById(
-  "wrong-login-username-password-alert-toast"
-);
+
 //let openUserDataModalBtn = document.getElementById("open-user-data-modal-btn")
 
 userLoginForm.onsubmit = function (e) {
