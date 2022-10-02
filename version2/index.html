@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <style>
+      @media only screen and (min-width:700px){
+        #main-container{
+          width: 70%;
+        }
+      }
+      @media only screen and (min-width:900px){
+        #main-container{
+          width: 50%;
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container bg-white my-2 p-5" id="main-container">
+      <h1 class="text-center py-2">Registration Form</h1>
+      <!--Main Form-->
+      <form
+        action="#"
+        class="was-validated px-3 py-5"
+        id="main-form"
+        autocomplete="off"
+      >
+        <!--Firstname-->
+        <div class="form-floating my-4">
+          <input
+            type="text"
+            class="form-control"
+            id="user-first-name"
+            placeholder="Adınız"
+            pattern="[a-zA-z\s\p{L}]{1,30}"
+            required
+          />
+          <label for="fname">Adınız</label>
+        </div>
+        <!--Lastname-->
+        <div class="form-floating my-4">
+          <input
+            type="text"
+            class="form-control"
+            id="user-last-name"
+            placeholder="Soyadınız"
+            pattern="[a-zA-z\s\p{L}]{1,30}"
+            required
+          />
+          <label for="fname">Soyadınız</label>
+        </div>
+        <!--Fathername-->
+        <div class="form-floating my-4">
+          <input
+            type="text"
+            class="form-control"
+            id="user-father-name"
+            placeholder="ata adı"
+            pattern="[a-zA-Z\s\p{L}]{1,30}"
+            required
+          />
+          <label for="fname">Atanızın adı</label>
+        </div>
+        <!--Date-->
+        <div class="my-4">
+          <label for="bdate" class="p-1">Doğum tarixiniz</label>
+          <input
+            type="date"
+            class="form-control form-control-lg"
+            id="user-bdate"
+            required
+          />
+        </div>
+        <!--Cinsiyyet-->
+        <div class="my-4">
+          <label class="p-1">Cinsiniz</label>
+          <div class="row mx-2 my-3">
+            <div class="col form-check">
+              <input
+                type="radio"
+                class="form-check-input"
+                id="men-option"
+                name="option"
+                required
+              />
+              <label for="men" class="form-check-label">Kişi</label>
+            </div>
+            <div class="col form-check">
+              <input
+                type="radio"
+                class="form-check-input"
+                id="women-option"
+                name="option"
+                required
+              />
+              <label for="women" class="form-check-label">Qadın</label>
+            </div>
+          </div>
+        </div>
+        <!--City-->
+        <div class="my-4">
+          <label for="user-city-name" class="p-1">Yaşadığınız Ünvan</label>
+          <input
+            type="text"
+            class="form-control"
+            id="user-city-name"
+            pattern="[a-zA-z0-9\s\p{L}]{1,40}"
+            placeholder="Şəhər/Rayon adını qeyd edin"
+            required
+          />
+        </div>
+        <!--Email-->
+        <div class="my-4">
+          <label for="user-email" class="p-1">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="user-email"
+            placeholder="Email ünvanınızı qeyd edin"
+            required
+          />
+        </div>
+        <!--Phone Number-->
+        <div class="my-4">
+          <label for="user-phone-number" class="p-1">Əlaqə nömrəsi</label>
+          <input
+            type="text"
+            class="form-control"
+            id="user-phone-number"
+            pattern="[0-9]{3}[-][0-9]{3}[-][0-9]{2}[-][0-9]{2}"
+            placeholder="Telefon-nömrənizi qeyd edin"
+            required
+          />
+          <div class="invalid-feedback">
+            Telefon nömrəsi bu formada yazılmalıdır: 055-555-55-55
+          </div>
+        </div>
+
+        <!--Main Form submit and next button-->
+        <button
+          type="submit"
+          class="btn btn-lg btn-primary"
+          id="person-info-form-btn"
+        >
+          Növbəti
+        </button>
+      </form>
+
+      <!--Request For Education-->
+      <div class="my-4 px-3 d-none" id="request-for-education">
+        <label class="p-1">Ali təhsiliniz var?</label>
+        <div class="row mx-2 my-3">
+          <!--Yes for education-->
+          <div class="col form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="yes-for-education"
+              name="option-e"
+              required
+            />
+            <label for="yes-for-education" class="form-check-label">Hə</label>
+          </div>
+          <!--No for education-->
+          <div class="col form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="no-for-education"
+              name="option-e"
+              required
+            />
+            <label for="no-for-education" class="form-check-label">Yox</label>
+          </div>
+        </div>
+      </div>
+      <!--Education Main Div-->
+      <div class="my-4 px-3 d-none" id="education-main-div">
+        <div id="education-info">
+          <h1>Təhsil haqqında</h1>
+        </div>
+        <button
+          class="btn btn-primary my-3"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#education-modal"
+          id="add-education-section-btn"
+        >
+          Əlavə edin
+        </button>
+        <div id="education-panel"></div>
+
+        <div class="modal fade" data-bs-backdrop="static" id="education-modal">
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title">Ali təhsiliniz haqqında</h3>
+                <button
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  id="close-modal-btn"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form
+                  action="#"
+                  class="was-validated p-4"
+                  id="education-modal-form"
+                  autocomplete="off"
+                >
+                  <div class="my-3">
+                    <label for="select-input-degree" class="p-1">Dərəcə</label>
+                    <div class="dropdown">
+                      <input
+                        type="text"
+                        class="form-select dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        id="select-input-degree"
+                        placeholder="Seçin"
+                        pattern="[a-zA-z\p{L}]{1,}"
+                        required
+                      />
+                      <ul class="dropdown-menu w-100" id="degree-dropdown-menu">
+                        <li class="dropdown-item">Bakalavr</li>
+                        <li class="dropdown-item">Magistr</li>
+                        <li class="dropdown-item">Doktorantura</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="my-3">
+                    <label for="select-input-uni-name" class="p-1"
+                      >Təhsil müəssisəsi</label
+                    >
+                    <div class="dropdown">
+                      <input
+                        type="text"
+                        class="form-select dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        id="select-input-uni-name"
+                        placeholder="Seçin"
+                        pattern="[a-zA-Z0-9\s\p{L}]{1,}"
+                        required
+                      />
+                      <ul
+                        class="dropdown-menu w-100 overflow-auto"
+                        style="height: 150px"
+                        id="uni-name-dropdown-menu"
+                      >
+                        <li class="dropdown-item">Azərbaycan Dövlət Neft və Sənaye Universiteti</li>
+                        <li class="dropdown-item">Azərbaycan Dövlət Pedaqoji Univertiteti</li>
+                        <li class="dropdown-item">Azərbaycan Tibb Universiteti</li>
+                        <li class="dropdown-item">Azərbaycan Dövlət İqtisad Universiteti</li>
+                        <li class="dropdown-item">Azərbaycan Dillər Universiteti</li>
+                        <li class="dropdown-item">Azərbaycan Dövlət Memarlıq və İnşaat Universiteti</li>
+                        <li class="dropdown-item">Azərbaycan Texnologiya Universiteti</li>
+                        <li class="dropdown-item">Azərbaycan Dövlət Dəniz Akademiyası</li>
+                        <li class="dropdown-item">Azərbaycan Dövlət Rəssamlıq Akademiyası</li>
+                        <li class="dropdown-item">Azərbaycan Turizm və Menecment Universiteti</li>
+                        <li class="dropdown-item">Bakı Dövlət Universiteti</li>
+                        <li class="dropdown-item">Bakı Ali Neft Məktəbi</li>
+                        <li class="dropdown-item">Bakı Mühəndislik Universiteti</li>
+                        <li class="dropdown-item">Bakı Avrasiya Universiteti</li>
+                        <li class="dropdown-item">Bakı Biznes Universiteti</li>
+                        <li class="dropdown-item">Bakı Qızlar Univeristeti</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="my-3">
+                    <label class="p-1">Tədris illəri</label>
+                    <div class="row">
+                      <div class="col">
+                        <div class="dropdown">
+                          <input
+                            type="text"
+                            class="form-select dropdown-toggle"
+                            pattern="[0-9]{1,4}"
+                            data-bs-toggle="dropdown"
+                            id="select-input-start-year"
+                            placeholder="Seçin"
+                            required
+                          />
+                          <ul
+                            class="dropdown-menu w-100 overflow-auto"
+                            style="height: 150px"
+                            id="start-year-dropdown-menu"
+                          >
+                            <li class="dropdown-item">2022</li>
+                            <li class="dropdown-item">2021</li>
+                            <li class="dropdown-item">2020</li>
+                            <li class="dropdown-item">2019</li>
+                            <li class="dropdown-item">2018</li>
+                            <li class="dropdown-item">2017</li>
+                            <li class="dropdown-item">2016</li>
+                            <li class="dropdown-item">2015</li>
+                            <li class="dropdown-item">2014</li>
+                            <li class="dropdown-item">2013</li>
+                            <li class="dropdown-item">2012</li>
+                            <li class="dropdown-item">2011</li>
+                            <li class="dropdown-item">2010</li>
+                            <li class="dropdown-item">2009</li>
+                            <li class="dropdown-item">2008</li>
+                            <li class="dropdown-item">2007</li>
+                            <li class="dropdown-item">2006</li>
+                            <li class="dropdown-item">2005</li>
+                            <li class="dropdown-item">2004</li>
+                            <li class="dropdown-item">2003</li>
+                            <li class="dropdown-item">2002</li>
+                            <li class="dropdown-item">2001</li>
+                            <li class="dropdown-item">2000</li>
+                            <li class="dropdown-item">1999</li>
+                            <li class="dropdown-item">1998</li>
+                            <li class="dropdown-item">1997</li>
+                            <li class="dropdown-item">1996</li>
+                            <li class="dropdown-item">1995</li>
+                            <li class="dropdown-item">1994</li>
+                            <li class="dropdown-item">1993</li>
+                            <li class="dropdown-item">1992</li>
+                            <li class="dropdown-item">1991</li>
+                            <li class="dropdown-item">1990</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="dropdown">
+                          <input
+                            type="text"
+                            class="form-select dropdown-toggle"
+                            pattern="[0-9]{1,4}"
+                            data-bs-toggle="dropdown"
+                            id="select-input-end-year"
+                            placeholder="Seçin"
+                            required
+                          />
+                          <ul
+                            class="dropdown-menu w-100 overflow-auto"
+                            style="height: 150px"
+                            id="end-year-dropdown-menu"
+                          >
+                            <li class="dropdown-item">2027</li>
+                            <li class="dropdown-item">2026</li>
+                            <li class="dropdown-item">2025</li>
+                            <li class="dropdown-item">2024</li>
+                            <li class="dropdown-item">2023</li>
+                            <li class="dropdown-item">2022</li>
+                            <li class="dropdown-item">2021</li>
+                            <li class="dropdown-item">2020</li>
+                            <li class="dropdown-item">2019</li>
+                            <li class="dropdown-item">2018</li>
+                            <li class="dropdown-item">2017</li>
+                            <li class="dropdown-item">2016</li>
+                            <li class="dropdown-item">2015</li>
+                            <li class="dropdown-item">2014</li>
+                            <li class="dropdown-item">2013</li>
+                            <li class="dropdown-item">2012</li>
+                            <li class="dropdown-item">2011</li>
+                            <li class="dropdown-item">2010</li>
+                            <li class="dropdown-item">2009</li>
+                            <li class="dropdown-item">2008</li>
+                            <li class="dropdown-item">2007</li>
+                            <li class="dropdown-item">2006</li>
+                            <li class="dropdown-item">2005</li>
+                            <li class="dropdown-item">2004</li>
+                            <li class="dropdown-item">2003</li>
+                            <li class="dropdown-item">2002</li>
+                            <li class="dropdown-item">2001</li>
+                            <li class="dropdown-item">2000</li>
+                            <li class="dropdown-item">1999</li>
+                            <li class="dropdown-item">1998</li>
+                            <li class="dropdown-item">1997</li>
+                            <li class="dropdown-item">1996</li>
+                            <li class="dropdown-item">1995</li>
+                            <li class="dropdown-item">1994</li>
+                            <li class="dropdown-item">1993</li>
+                            <li class="dropdown-item">1992</li>
+                            <li class="dropdown-item">1991</li>
+                            <li class="dropdown-item">1990</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="my-3">
+                    <label for="input-ixtisas" class="p-1">İxtisas</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="input-ixtisas"
+                      placeholder="İxtisasınızı qeyd edin"
+                      name="ixtisas-name"
+                      pattern="[a-zA-Z0-9\s\p{L}]{1,}"
+                      required
+                    />
+                  </div>
+
+                  <div class="my-3">
+                    <label for="input-gbal">Giriş balı</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      pattern="[0-9.,]{1,10}"
+                      id="input-gbal"
+                      name="giris-bal"
+                      placeholder="Giriş balınızı qeyd edin"
+                      required
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn btn-primary my-3 mx-auto"
+                    id="confirm-form-btn"
+                  >
+                    Təsdiq et
+                  </button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  class="btn btn-lg btn-success col-12"
+                  type="button"
+                  id="modal-footer-btn"
+                  data-bs-dismiss="modal"
+                >
+                  Əlavə et
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Education Next Button-->
+      <div class="my-4 px-3 d-none" id="education-end-button-div">
+        <button
+          class="btn btn-primary btn-lg"
+          id="education-end-button"
+          type="button"
+        >
+          Növbəti
+        </button>
+      </div>
+
+      <!--Request For Language-->
+      <div class="my-4 px-3 d-none" id="request-for-language">
+        <label class="p-1">Dil bilikləriniz var?</label>
+        <div class="row mx-2 my-3">
+          <div class="col form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="yes-for-language"
+              name="option-l"
+              required
+            />
+            <label for="yes-for-language" class="form-check-label">Hə</label>
+          </div>
+          <div class="col form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="no-for-language"
+              name="option-l"
+              required
+            />
+            <label for="no-for-language" class="form-check-label">Yox</label>
+          </div>
+        </div>
+      </div>
+      <!--Language Main Div-->
+      <div class="my-4 px-3 d-none" id="language-main-div">
+        <div id="language-info">
+          <h1>Dil bilikləri</h1>
+        </div>
+        <button
+          class="btn btn-primary my-3"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#language-modal"
+          id="add-language-section-btn"
+        >
+          Əlavə edin
+        </button>
+        <div id="language-panel"></div>
+
+        <div class="modal fade" data-bs-backdrop="static" id="language-modal">
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title">Dil bilikləri</h3>
+                <button
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  id="close-lang-modal-btn"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form
+                  action="#"
+                  class="was-validated p-1"
+                  id="language-modal-form"
+                  autocomplete="off"
+                >
+                  <div class="my-3">
+                    <label for="select-lang-name" class="p-1">Dili Seçin</label>
+                    <div class="dropdown">
+                      <input
+                        type="text"
+                        class="form-select dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        id="select-lang-name"
+                        placeholder="Əlavə edin"
+                        pattern="[a-zA-z\s\p{L}]{1,}"
+                        required
+                      />
+                      <ul
+                        class="dropdown-menu w-100 overflow-auto"
+                        style="height: 100px"
+                        id="lang-name-dropdown-menu"
+                      >
+                        <li class="dropdown-item">Azərbaycan</li>
+                        <li class="dropdown-item">Rus</li>
+                        <li class="dropdown-item">İngilis</li>
+                        <li class="dropdown-item">Türk</li>
+                        <li class="dropdown-item">Alman</li>
+                        <li class="dropdown-item">Fransız</li>
+                        <li class="dropdown-item">İtalyan</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="my-3">
+                    <label class="p-1">Dil Biliyi</label>
+                    
+                    <div class="row">
+                      <div class="col">
+                        <div class="dropdown">
+                          <label for="select-lang-read-skill" class="p-1">Oxumaq</label>
+                          <input
+                            type="text"
+                            class="form-select dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            id="select-lang-read-skill"
+                            pattern="[a-zA-z\p{L}]{1,}"
+                            required
+                          />
+                          <ul class="dropdown-menu w-100" id="read-skill-menu">
+                            <li class="dropdown-item">Əla</li>
+                            <li class="dropdown-item">Orta</li>
+                            <li class="dropdown-item">Zəif</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="dropdown">
+                          <label for="select-lang-write-skill" class="p-1">Yazmaq</label>
+                          <input
+                            type="text"
+                            class="form-select dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            id="select-lang-write-skill"
+                            pattern="[a-zA-z\p{L}]{1,}"
+                            required
+                          />
+                          <ul class="dropdown-menu w-100" id="write-skill-menu">
+                            <li class="dropdown-item">Əla</li>
+                            <li class="dropdown-item">Orta</li>
+                            <li class="dropdown-item">Zəif</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="dropdown">
+                          <label for="select-lang-speak-skill" class="p-1">Danışmaq</label>
+                          <input
+                            type="text"
+                            class="form-select dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            id="select-lang-speak-skill"
+                            
+                            pattern="[a-zA-z\p{L}]{1,}"
+                            required
+                          />
+                          <ul class="dropdown-menu w-100" id="speak-skill-menu">
+                            <li class="dropdown-item">Əla</li>
+                            <li class="dropdown-item">Orta</li>
+                            <li class="dropdown-item">Zəif</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn btn-primary mt-5 mb-3"
+                    id="confirm-lang-form-btn"
+                  >
+                    Təsdiq et
+                  </button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  class="btn btn-lg btn-success col-12"
+                  type="button"
+                  id="lang-modal-footer-btn"
+                  data-bs-dismiss="modal"
+                >
+                  Əlavə et
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Language Next Button-->
+      <div class="my-4 px-3 d-none" id="language-end-button-div">
+        <button
+          class="btn btn-primary btn-lg"
+          id="language-end-button"
+          type="button"
+        >
+          Növbəti
+        </button>
+      </div>
+
+      <!--Request For Computer-->
+      <div class="my-4 px-3 d-none" id="request-for-computer">
+        <label class="p-1">Komputer bilikləriniz var?</label>
+        <div class="row mx-2 my-3">
+          <div class="col form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="yes-for-computer"
+              name="option-c"
+              required
+            />
+            <label for="yes-for-computer" class="form-check-label">Hə</label>
+          </div>
+          <div class="col form-check">
+            <input
+              type="radio"
+              class="form-check-input"
+              id="no-for-computer"
+              name="option-c"
+              required
+            />
+            <label for="no-for-computer" class="form-check-label">Yox</label>
+          </div>
+        </div>
+      </div>
+      <!--Computer Main Div-->
+      <div class="my-4 px-3 d-none" id="computer-main-div">
+        <div id="computer-info">
+          <h1>Kompüter bilikləri</h1>
+        </div>
+        <button
+          class="btn btn-primary my-3"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#computer-modal"
+          id="add-computer-section-btn"
+        >
+          Əlavə edin
+        </button>
+        <div id="computer-panel"></div>
+
+        <div class="modal fade" data-bs-backdrop="static" id="computer-modal">
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title">Kompüter bilikləri</h3>
+                <button
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  id="close-comp-modal-btn"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form
+                  action="#"
+                  class="was-validated p-1"
+                  id="computer-modal-form"
+                  autocomplete="off"
+                >
+                  <div class="my-3">
+                    <label for="input-comp-name" class="p-1">Bilik</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="input-comp-name"
+                      placeholder="Qeyd edin"
+                      required
+                    />
+                  </div>
+                  <div class="my-3">
+                    <label class="p-1">Bacarıq səviyyəsi</label>
+                    <div class="dropdown">
+                      <input
+                        type="text"
+                        class="form-select dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        id="select-comp-skill"
+                        placeholder="Seçin"
+                        pattern="[a-zA-Z\p{L}]{1,}"
+                        required
+                      />
+                      <ul class="dropdown-menu w-100" id="comp-skill-menu">
+                        <li class="dropdown-item">Əla</li>
+                        <li class="dropdown-item">Orta</li>
+                        <li class="dropdown-item">Zəif</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn btn-primary mt-5 mb-3"
+                    id="confirm-comp-form-btn"
+                  >
+                    Təsdiq et
+                  </button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  class="btn btn-lg btn-success col-12"
+                  type="button"
+                  id="comp-modal-footer-btn"
+                  data-bs-dismiss="modal"
+                >
+                  Əlavə et
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Computer Next Button-->
+      <div class="my-4 px-3 d-none" id="computer-end-button-div">
+        <button
+          class="btn btn-primary btn-lg"
+          id="computer-end-button"
+          type="button"
+        >
+          Növbəti
+        </button>
+      </div>
+
+      <!--Account Main Div-->
+      <div class="my-4 px-3 d-none" id="account-main-div">
+        <h1>Hesab Məlumatları</h1>
+
+        <form
+          action="#"
+          class="was-validated py-3"
+          id="account-form"
+          autocomplete="off"
+        >
+          <div class="my-2">
+            <label for="account-user-name" class="p-1">İstifadəçi adı</label>
+            <input
+              type="text"
+              class="form-control form-control-lg"
+              id="account-user-name"
+              
+              pattern="([a-zA-z\p{L}]{1,30}[0-9]{1,30})||([0-9]{1,30}[a-zA-z\p{L}]{1,30})"
+              required
+            />
+            <div class="invalid-feedback">
+              Ən azı bir hərf və bir rəqəm istifadə edin. Boşluq buraxmayın
+            </div>
+          </div>
+
+          <div class="">
+            <label for="account-password-1" class="p-1">Şifrə</label>
+            <div class="position-relative">
+              <input
+                type="password"
+                class="form-control form-control-lg"
+                id="account-password-1"
+                pattern="[a-zA-Z0-9\p{L}!@#$%^&*()-/]{3,}"
+                required
+              />
+              
+              <a
+                href="#"
+                id="show-password-icon-1"
+                tabindex="-1"
+                class="position-absolute text-black"
+                style="top: 9px; right: 40px; font-size: 20px"
+                ><i class="fa-solid fa-eye"></i
+              ></a>
+            </div>
+            
+          </div>
+
+          <div class="my-3">
+            <label for="account-password-2" class="p-1">Şifrə (təkrar)</label>
+            <div class="position-relative">
+              <input
+                type="password"
+                class="form-control form-control-lg"
+                id="account-password-2"
+                pattern="[a-zA-Z0-9\p{L}!@#$%^&*()-/]{3,}"
+                required
+              />
+              <a
+                href="#"
+                id="show-password-icon-2"
+                tabindex="-1"
+                class="position-absolute text-black"
+                style="top: 9px; right: 40px; font-size: 20px"
+                ><i class="fa-solid fa-eye"></i
+              ></a>
+            </div>
+          </div>
+          <div
+            class="toast fade align-items-center text-bg-danger border-0"
+            id="wrong-password-alert-toast"
+          >
+            <div class="d-flex">
+              <div class="toast-body">Şifrə eyni deyil</div>
+              <button
+                type="button"
+                class="btn-close btn-close-white me-2 m-auto"
+                data-bs-dismiss="toast"
+                aria-label="Close"
+              ></button>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-lg btn-primary my-3"
+            id="account-submit-btn"
+          >
+            Təsdiqlə
+          </button>
+        </form>
+      </div>
+
+      <!--Page Confirm Button-->
+      <div class="m-3 d-none" id="main-page-end-button-div">
+        <button
+          type="button"
+          class="btn btn-success btn-lg col-12"
+          id="main-page-end-button"
+        >
+          Məlumatları Yadda Saxla
+        </button>
+      </div>
+
+      <!--Open User Login Button-->
+      <div class="mx-3 my-5 d-none" id="user-information-div">
+        <button
+          type="button"
+          id="user-information-open-button"
+          class="btn btn-lg btn-outline-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#user-login-modal"
+        >
+          İstifadəçi məlumatları
+        </button>
+
+        <div class="modal fade" data-bs-backdrop="static" id="user-login-modal">
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3>Hesaba Daxil Ol</h3>
+                <button
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  id="close-login-modal-btn"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form
+                  action="#"
+                  class="was-validated p-1"
+                  id="user-login-form"
+                  autocomplete="off"
+                >
+                  <div class="my-3">
+                    <label for="login-username-input">İstifadəçi adı</label>
+                    <input
+                      type="text"
+                      class="form-control form-control-lg"
+                      id="login-username-input"
+                      placeholder="İstifadəçi adınızı daxil edin"
+                      pattern="([a-zA-z\p{L}]{1,30}[0-9]{1,30})||([0-9]{1,30}[a-zA-z\p{L}]{1,30})"
+                      required
+                    />
+                  </div>
+
+                  <div class="my-3">
+                    <label for="login-password-input" class="p-1">Şifrə</label>
+                    <div class="position-relative">
+                      <input
+                        type="password"
+                        class="form-control form-control-lg"
+                        id="login-password-input"
+                        placeholder="Şifrənizi daxil edin"
+                        pattern="[a-zA-Z0-9\p{L}!@#$%^&*()-/]{3,}"
+                        required
+                      />
+                      <a
+                        href="#"
+                        id="show-login-password-icon"
+                        tabindex="-1"
+                        class="position-absolute text-black"
+                        style="top: 9px; right: 40px; font-size: 20px"
+                        ><i class="fa-solid fa-eye"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <div
+                    class="toast fade align-items-center text-bg-danger border-0 my-2"
+                    id="wrong-login-username-alert-toast"
+                  >
+                    <div class="d-flex">
+                      <div class="toast-body">İstifadəçi adı yanlışdır!</div>
+                      <button
+                        type="button"
+                        class="btn-close btn-close-white me-2 m-auto"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                  </div>
+                  <div
+                    class="toast fade align-items-center text-bg-danger border-0 my-2"
+                    id="wrong-login-password-alert-toast"
+                  >
+                    <div class="d-flex">
+                      <div class="toast-body">Şifrə yanlışdır!</div>
+                      <button
+                        type="button"
+                        class="btn-close btn-close-white me-2 m-auto"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                  </div>
+                  <div
+                    class="toast fade align-items-center text-bg-danger border-0 my-2"
+                    id="wrong-login-username-password-alert-toast"
+                  >
+                    <div class="d-flex">
+                      <div class="toast-body">
+                        İstifadəçi adı və Şifrə yanlışdır!
+                      </div>
+                      <button
+                        type="button"
+                        class="btn-close btn-close-white me-2 m-auto"
+                        data-bs-dismiss="toast"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-lg"
+                    id="login-modal-submit-btn"
+                  >
+                    Təsdiq et
+                  </button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-lg btn-success col-12"
+                  data-bs-toggle="modal"
+                  id="open-user-data-modal-btn"
+                  data-bs-target="#user-data-modal"
+                >
+                  Daxil Ol
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" data-bs-backdrop="static" id="user-data-modal">
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 id="user-lastname-firstname"></h3>
+                <button
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  id="close-user-data-modal"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <div class="my-3">
+                    <h3>Şəxsi Məlumatlar</h3>
+                    <table class="table table-hover">
+                      <tr>
+                        <td class="fw-bold">Ad</td>
+                        <td id="user-first-name-cell"></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-bold">Soyad</td>
+                        <td id="user-last-name-cell"></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-bold">Ata adı</td>
+                        <td id="user-father-name-cell"></td>
+                      </tr>
+                      <tr></tr>
+                      <tr>
+                        <td class="fw-bold">Doğum tarixi</td>
+                        <td id="user-birthday-cell"></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-bold">Yaşadığı ünvan</td>
+                        <td id="user-location-name-cell"></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-bold">Email</td>
+                        <td id="user-email-cell"></td>
+                      </tr>
+                      <tr>
+                        <td class="fw-bold">Əlaqə nömrəsi</td>
+                        <td id="user-phone-number-cell"></td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <div class="my-3 overflow-auto">
+                    <h3 class="p-1">Təhsil Haqqında</h3>
+                    <table class="table table-hover" id="education-table" style="width: 1000px;">
+                      <thead>
+                        <tr>
+                          <th>Təhsil Müəssisənin adı</th>
+                          <th>Dərəcə</th>
+                          <th>Ixtisas</th>
+                          <th>Tədris İlləri</th>
+                          <th>Qəbul balı</th>
+                        </tr>
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                  </div>
+
+                  <div class="my-3 overflow-auto">
+                    <h3 class="p-1">Dil bilikləri</h3>
+                    <table class="table table-hover" id="language-table">
+                      <thead>
+                        <tr>
+                          <th>Dil</th>
+                          <th>Oxumaq</th>
+                          <th>Yazmaq</th>
+                          <th>Danışmaq</th>
+                        </tr>
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                  </div>
+
+                  <div class="my-3 overflow-auto">
+                    <h3 class="p-1">Kompüter bilikləri</h3>
+                    <table class="table table-hover" id="computer-table">
+                      <thead>
+                        <tr>
+                          <th>Bilik</th>
+                          <th>Bacarıq səviyyəsi</th>
+                        </tr>
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script
+      src="https://kit.fontawesome.com/3cf65b98ce.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
